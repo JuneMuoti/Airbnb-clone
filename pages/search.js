@@ -2,9 +2,11 @@ import { useRouter } from "next/dist/client/router"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import {format} from "date-fns"
+import InfoCard from "../components/InfoCard";
 
-function Search() {
+function Search({searchResults}) {
     const router=useRouter();
+    console.log(searchResults);
     
      const{location,startDate,endDate,guestNumber}=router.query;
      const formattedStartDate=format(new Date(startDate),"dd MMM yy");
@@ -13,7 +15,7 @@ function Search() {
      console.log(formattedStartDate);
     return (
         <div>
-            <Header />
+            <Header placeholder={`${location} | ${range} | ${guestNumber} guests`}/>
                 <main className="flex">
                     <section className="flex-grow pt-14 px-6">
                         <p className="text-xs">300+ Stays -{range}  - for {guestNumber} number of guests</p>
@@ -25,13 +27,37 @@ function Search() {
                             <p className="button">Instant Book</p>
                             <p className="button">More filters</p>
                         </div>
+                        <div className="flex flex-col">
+                            {searchResults?.map(({img,location,title,description,star,price,total}) =>(
+                           <InfoCard 
+                           key={img}
+                           img={img}
+                           location={location}
+                           title={title}
+                           description={description}
+                           star={star}
+                           price={price}
+                           total={total}
+                           />
+                            ))}
+                        </div>
+
                     </section>
                     
                 </main>
-          <h1>I am the search page</h1>  
+    
           <Footer />
         </div>
     )
 }
 
 export default Search
+export async function getServerSideProps(){
+    const searchResults=await fetch("https://links.papareact.com/isz").
+    then((res) => res.json());
+    return {
+        props:{
+            searchResults
+        }
+    }
+}
