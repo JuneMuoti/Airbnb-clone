@@ -16,26 +16,26 @@
           <div  className="space-y-4 text-xs text-gray-800">
           <h5 className="font-bold">COMMUNITY</h5>
               <p>Accessibility</p>
-              <p>This is not a real site</p>
-              <p>Its a pretty awesome clone</p>
-              <p>Referrals accepted</p>
-              <p>Papafam</p>
+              <p>Frontline Stays</p>
+              <p>Guest Referrals</p>
+              <p>Gift Cards</p>
+              <p>Diversity</p>
               </div>  
           <div  className="space-y-4 text-xs text-gray-800">
           <h5 className="font-bold">HOST</h5>
-              <p>Papa React</p>
-              <p>Presents</p>
-              <p>Zero to Full Stack Hero</p>
-              <p>Hundreds of Students</p>
-              <p>Join Now</p>
+              <p>Host your home</p>
+              <p>Host an Online Experience</p>
+              <p>Responsible hosting</p>
+              <p>Resource Center</p>
+              <p>Community Center</p>
               </div>  
           <div  className="space-y-4 text-xs text-gray-800">
           <h5 className="font-bold">SUPPORT</h5>
-              <p>Help Centre</p>
+              <p>Help Center</p>
+              <p>Cancellation options</p>
+              <p>Neighborhood Support</p>
               <p>Trust & Safety</p>
-              <p>Say Hi YouTube</p>
-              <p>Easter Eggs</p>
-              <p>For the Win</p>
+             
               </div>  
            
          </div>
